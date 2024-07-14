@@ -1,6 +1,6 @@
 import './App.css';
 import Title from "./Title.jsx";
-
+import ProductTab from "./ProductTab.jsx"
 function Description(){
   return <h3> I am the description</h3>
 }
@@ -8,10 +8,7 @@ function Description(){
 function App(){
   return(
     <>
-       <h1>this is my app component</h1>
-       <p>inside app copmponent we have:</p>
-      <Title />
-      <Description/>
+       <ProductTab />
     </>
   );
 }
