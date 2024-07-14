@@ -7,12 +7,12 @@ function Description(){
 
 function App(){
   return(
-    <div>
+    <>
        <h1>this is my app component</h1>
        <p>inside app copmponent we have:</p>
       <Title />
       <Description/>
-    </div>
+    </>
   );
 }
 
