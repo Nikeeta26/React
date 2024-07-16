@@ -7,9 +7,6 @@ function ProductTab(){
      flexWrap:"wrap",
      justifyContent:"center",
      alignItems:"center",
-     
-     
-    
    };
    //let option =[<li>"hi-tect"</li>,<li>"durable"</li>,<li>"fast"</li>];
    //let option2 ={a:"hi-tect" ,b:"durable", c:"fast"};
