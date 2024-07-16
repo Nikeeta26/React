@@ -1,5 +1,5 @@
 import "./Product.css";
-import Price from "./Price";
+import Price from "./Pricedis";
 // function Product({ title, price = 1, feature = [], feature2 }) {
 //     //const list = feature.map((element) => <li>{element}</li>);
 //     //const isDiscount = price > 3000 ? "50%" : "";    // use ternary oprator {price > 3000 ? <p>"Discount 5%"</p> : null}
