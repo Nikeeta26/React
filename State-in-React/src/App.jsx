@@ -1,11 +1,13 @@
 import './App.css'
-import CounterDis from './CounterDis';
+import LikeButton from "./LikeButton";
+
 
 function App() {
   return(
  <>
- <h1>State in React</h1>
- <CounterDis />
+ <h4>State in React</h4>
+
+ <LikeButton />
  </>
   );
 }
