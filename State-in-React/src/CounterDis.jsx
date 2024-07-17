@@ -1,13 +1,12 @@
+import { useState } from "react"
+
 export default function CounterDis(){
-    let count = 0;
-    function incCount(){
-        count+=1;
-        console.log(count);
-    }
+    let arr = useState(0);
+   console.log(arr);
     return(
         <div>
-           <h2>Count={count}</h2> 
-           <button onClick={incCount}>Increase Count</button>
+           <h2>Count=</h2> 
+           <button>Increase Count</button>
         </div>
         
     )
