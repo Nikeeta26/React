@@ -1,11 +1,28 @@
 import { useState } from "react"
 
-export default function CounterDis(){
-    let [count, setCount] = useState(0);
+function init(){
+    console.log("initialize ");
+    return Math.random();
+}
 
+export default function CounterDis(){
+    let [count, setCount] = useState(init);//initialization
+    console.log("counter increase");
+    // console.log("counter=",count);
    let inCount = () => {
-       setCount(count + 1);
-       console.log(count);
+       setCount((currCount)=>{
+        return currCount + 1;
+
+       });
+       setCount((currCount)=>{
+        return currCount + 1;
+       });
+       // when we set any random value as fix
+       // setCount(25);
+       
+       //setCount(count + 1);
+    //    console.log(count);
+    //    console.log(`inside count = ${count}`);
    };
 
    
