@@ -1,24 +1,36 @@
 import { useState } from "react"
 
 export default function LudoBoard(){
-     
+    
+    let random = Math.floor(Math.random()*6)+1;
+    console.log(random);
+
     let[moves, setMoves] = useState({blue:0, red:0, green:0, yellow:0});
-    let[count, setCount] = useState(0);
+    let[arr, setArr] = useState(["no moves"]);
 
     let updateBlue = ()=>{
         // moves.blue += 1;
-        console.log("moves:",moves.blue);
+        //console.log("moves:",moves.blue);
         //setMoves({...moves,   blue:moves.blue + 1});
         setMoves((previouMoves)=>{
-             return {...previouMoves, blue:previouMoves.blue+1}
+             return {...previouMoves, blue:previouMoves.blue=random}
         });
-    }
+    // 1: we can write 1 or 2
+        setArr((previousArr)=>{
+            return [...previousArr, "blue moves"];
+        });
+        console.log(arr);
+    
+    //2: 
+    // setArr([...arr, "blue moves"]);
+    // console.log(arr);
+     }
 
     let updateYellow = ()=>{
         // moves.blue += 1;
         //setMoves({...moves,   blue:moves.blue + 1});
         setMoves((previouMoves)=>{
-             return {...previouMoves, yellow:previouMoves.yellow+1}
+             return {...previouMoves, yellow:previouMoves.yellow=random}
         });
     }
 
@@ -26,7 +38,7 @@ export default function LudoBoard(){
         // moves.blue += 1;
         //setMoves({...moves,   blue:moves.blue + 1});
         setMoves((previouMoves)=>{
-             return {...previouMoves, green:previouMoves.green+1}
+             return {...previouMoves, green:previouMoves.green=random}
         });
     }
 
@@ -35,7 +47,7 @@ export default function LudoBoard(){
         console.log("moves:",moves.b);
         //setMoves({...moves,   blue:moves.blue + 1});
         setMoves((previouMoves)=>{
-             return {...previouMoves, red:previouMoves.red+1}
+             return {...previouMoves, red:previouMoves.red=random}
         });
     }
 
@@ -45,6 +57,8 @@ export default function LudoBoard(){
             <p>Game Begins!</p>
             <div className="board">
                 <p>Blue moves = {moves.blue}</p>
+                {/* <p>{random}</p> */}
+                {/* <p>{arr}</p> */}
                 <button onClick={updateBlue} style={{backgroundColor:"blue"}}>+1</button>
 
                 <p>Yellow moves = {moves.yellow}</p>

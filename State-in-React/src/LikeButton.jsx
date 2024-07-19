@@ -8,7 +8,7 @@ export default function LikeButton(){
 
         console.log(isLiked);
     }
-    let styles={color:"red"};
+    let styles={color:"red"}; 
     let divStyle = {border:"1px solid black"};
     return (
        <div style={divStyle}>
