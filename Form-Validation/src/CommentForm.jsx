@@ -1,13 +1,24 @@
 import { useState } from "react"
-import { v4 as uuidv4 } from 'uuid';
+import { useFormik } from 'formik';
+
 export default function CommentForm({addNewComment}){
-    let[formData, setFormData] = useState({
-        username:"",
-        remarks:"",
-        rating:"5",
-       
-        
-    });
+    // let[formData, setFormData] = useState({
+    //     username:"",
+    //     remarks:"",
+    //     rating:"5",   
+    // });
+
+    const formik = useFormik({
+        initialValues: {
+          firstName: '',
+          lastName: '',
+          email: '',
+        },
+        validate,
+        onSubmit: values => {
+          alert(JSON.stringify(values, null, 2));
+        },
+      });
 
   let handleInputChange = (event)=>{
       setFormData((currData)=>{
@@ -15,7 +26,16 @@ export default function CommentForm({addNewComment}){
       })
   }
 
+  let[isvalid, setValid] = useState(true);
+
 let FormSubmit = (event)=>{
+    if(!formData.username){
+        setValid(false);
+        console.log("username is require");
+        event.preventDefault();
+        return;
+
+    }
     console.log(formData);
     addNewComment(formData);
    event.preventDefault();
@@ -33,6 +53,9 @@ let FormSubmit = (event)=>{
         <form onSubmit={FormSubmit}>
             <label htmlFor="username">Username :</label>&nbsp;&nbsp;
             <input placeholder="Username" type="text" value={formData.username} name="username" id="username" onChange={handleInputChange}></input>
+            {/* {!isvalid?<p>username is require:</p>:<p></p>} */}
+            {!isvalid && <p>username is required</p>}
+
             <br></br>
             <br></br>
             <label htmlFor="remarks">Comment :</label>&nbsp;&nbsp;
