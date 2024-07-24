@@ -1,6 +1,18 @@
 import { useState } from "react"
 import { useFormik } from 'formik';
 
+//formik
+const validate = values => {
+    const errors = {};
+    if (!values.username) {
+      errors.username = 'Username is Required';
+    // } else if (values.username.length > 15) {
+    //   errors.username = 'Must be 15 characters or less';
+    }
+  
+    return errors;
+  };
+
 export default function CommentForm({addNewComment}){
     // let[formData, setFormData] = useState({
     //     username:"",
@@ -10,9 +22,9 @@ export default function CommentForm({addNewComment}){
 
     const formik = useFormik({
         initialValues: {
-          firstName: '',
-          lastName: '',
-          email: '',
+            username:"",
+            remarks:"",
+            rating:"5",
         },
         validate,
         onSubmit: values => {
@@ -20,53 +32,55 @@ export default function CommentForm({addNewComment}){
         },
       });
 
-  let handleInputChange = (event)=>{
-      setFormData((currData)=>{
-         return {...currData,[event.target.name]:event.target.value};
-      })
-  }
+//   let handleInputChange = (event)=>{
+//       setFormData((currData)=>{
+//          return {...currData,[event.target.name]:event.target.value};
+//       })
+//   }
 
-  let[isvalid, setValid] = useState(true);
+//   let[isvalid, setValid] = useState(true);
 
-let FormSubmit = (event)=>{
-    if(!formData.username){
-        setValid(false);
-        console.log("username is require");
-        event.preventDefault();
-        return;
+// let FormSubmit = (event)=>{
+//     if(!formData.username){
+//         setValid(false);
+//         console.log("username is require");
+//         event.preventDefault();
+//         return;
 
-    }
-    console.log(formData);
-    addNewComment(formData);
-   event.preventDefault();
-   setFormData(
-    {
-        username:"",
-        remarks:"",
-        rating:"5"
-    });
-}
+//     }
+//     console.log(formData);
+//     addNewComment(formData);
+//    event.preventDefault();
+//    setFormData(
+//     {
+//         username:"",
+//         remarks:"",
+//         rating:"5"
+//     });
+// }
 
     return(
         <div>
             <h4>Give a comment</h4>
-        <form onSubmit={FormSubmit}>
+        <form onSubmit={formik.handleSubmit}>
             <label htmlFor="username">Username :</label>&nbsp;&nbsp;
-            <input placeholder="Username" type="text" value={formData.username} name="username" id="username" onChange={handleInputChange}></input>
+            {/* value={formData.username} : add in inpute */}
+            <input placeholder="Username" type="text" name="username"  value={formik.values.username} id="username" onChange={formik.handleChange}></input>
+            {formik.errors.username ? <p style={{color:"red"}}>{formik.errors.username}</p> : null}
             {/* {!isvalid?<p>username is require:</p>:<p></p>} */}
-            {!isvalid && <p>username is required</p>}
+            {/* {!isvalid && <p>username is required</p>} */}
 
             <br></br>
             <br></br>
             <label htmlFor="remarks">Comment :</label>&nbsp;&nbsp;
-            <textarea value={formData.remarks} name="remarks" id="remarks" placeholder="add some remarks" onChange={handleInputChange}></textarea>
+            <textarea name="remarks"  value={formik.values.remarks} id="remarks" placeholder="add some remarks" onChange={formik.handleChange}></textarea>
             <br></br>
             <br></br>
             <label htmlFor="rating">rating :</label>&nbsp;&nbsp;
-            <input placeholder="rating" type="number" min="1" max="5" id="rating" value={formData.rating} name="rating" onChange={handleInputChange}></input>
+            <input placeholder="rating" type="number" min="1" max="5" id="rating" value={formik.values.rating}  name="rating" onChange={formik.handleChange}></input>
             <br></br>
             <br></br>
-            <button>Add Comment</button>
+            <button type="submit">Add Comment</button>
 
               <br></br>
               <br></br>
