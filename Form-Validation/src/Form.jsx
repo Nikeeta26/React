@@ -4,8 +4,7 @@ export default function Form(){
     // let[fullName, setFullName] = useState("nikeeta");
     // let handleNameChange = (event)=>{
     //     console.log(event.target.value);
-    //     setFullName(event.target.value);
-        
+    //     setFullName(event.target.value);  
     // }
 
     let[formData, setFormData] = useState({fullname:"", username:"", password:""});
@@ -44,11 +43,9 @@ export default function Form(){
             <br></br>
             <label htmlFor="password">Password :</label> &nbsp;
             <input placeholder="Enter the Password" type="password" value={formData.password} id="password" onChange={handleInputData} name="password"></input>
-            
             <br></br>
             <br></br>
             <button>Submit</button>
-
         </form>
     )
 }
