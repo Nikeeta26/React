@@ -2,7 +2,7 @@ import './App.css'
 import LikeButton from "./LikeButton";
 import CounterDis from "./CounterDis";
 import LudoBoard from './LudoBoard';
-
+import showList from "../../show_country/src/showList";
 function App() {
   return(
  <>
@@ -10,7 +10,7 @@ function App() {
 
 {/* <CounterDis /> */}
  {/* <LikeButton /> */}
-<LudoBoard />
+ <LudoBoard /> 
  </>
   );
 }
