@@ -27,7 +27,7 @@ export default function ShowList() {
           Select a country:
           <select value={selectedCountry} onChange={handleCountryChange}>
             <option value="">--Select a country--</option>
-            {Object.keys(data).map((country) => (
+             {Object.keys(data).map((country) => ( 
               <option key={country} value={country}>
                 {country}
               </option>
