@@ -6,20 +6,24 @@ export default function LudoBoard(){
     console.log(random);
 
     let[moves, setMoves] = useState({blue:0, red:0, green:0, yellow:0});
-    let[arr, setArr] = useState(["no moves"]);
+    let[arr, setArr] = useState([""]);
 
     let updateBlue = ()=>{
         // moves.blue += 1;
         //console.log("moves:",moves.blue);
         //setMoves({...moves,   blue:moves.blue + 1});
         setMoves((previouMoves)=>{
+            setArr((previousArr)=>{
+                return [...previousArr, "blue moves"];
+            });
+            console.log(arr);
              return {...previouMoves, blue:previouMoves.blue=random}
         });
     // 1: we can write 1 or 2
-        setArr((previousArr)=>{
-            return [...previousArr, "blue moves"];
-        });
-        console.log(arr);
+    // setArr((previousArr)=>{
+    //     return [...previousArr, "blue moves"];
+    // });
+    console.log(arr);
     
     //2: 
     // setArr([...arr, "blue moves"]);

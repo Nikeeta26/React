@@ -9,8 +9,8 @@ function App() {
  {/* <h4>State in React</h4> */}
 
 {/* <CounterDis /> */}
- {/* <LikeButton /> */}
- <LudoBoard /> 
+  <LudoBoard /> 
+ {/* <CounterDis />  */}
  </>
   );
 }

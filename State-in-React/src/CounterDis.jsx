@@ -2,7 +2,7 @@ import { useState } from "react"
 
 function init(){
     console.log("initialize ");
-    return Math.random();
+    return Math.floor(Math.random()*5)+1;
 }
 
 export default function CounterDis(){

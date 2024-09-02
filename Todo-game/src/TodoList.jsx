@@ -19,7 +19,7 @@ export default function TodoList(){
 
     let deleteTodo = (id)=>{
         console.log("task todo delete:",id);
-         setTodos((previousTodos) => todos.filter((previousTodos)=> previousTodos.id != id));
+         setTodos((previousTodos) => previousTodos.filter((todo)=> todo.id != id));
         // console.log(copy);
     }
 
