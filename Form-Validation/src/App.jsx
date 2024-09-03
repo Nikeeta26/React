@@ -10,9 +10,9 @@ function App() {
   return (
     <>
       <h3>Create random jokes</h3>
-    <Joker />
+    {/* <Joker /> */}
     {/* <Counter /> */}
-      {/* <Comments /> */}
+      <Comments />
     </>
   )
 }

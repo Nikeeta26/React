@@ -16,11 +16,11 @@ export default function Counter(){
 
 
    useEffect(function printSomething(){
-    console.log("this is side effect")
+    console.log("this is side effect");
    },
-   //[countx]
-//    [countx, county]
-[]
+   [countx]
+//  [countx, county]
+//[]
 );
 
     return(
@@ -31,7 +31,7 @@ export default function Counter(){
            <br></br>
            <h3>Count = {county}</h3>
            <button onClick={showCounty}>create count y</button>
-       
+         
         </div>
     )
 }
