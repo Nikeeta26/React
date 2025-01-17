@@ -6,7 +6,7 @@ export default function TodoList(){
     let [newtodo, setNewtodo] = useState("");
 
     let addNewTask = ()=>{
-       console.log("we have to add new task")
+       console.log("we have to add new task");
        setTodos((prevTodos)=>{
         return [...prevTodos,{task:newtodo,id:uuidv4(),isDone:false}];
        });

@@ -1,14 +1,12 @@
 import { useState } from 'react'
 import './App.css'
-import Quite from './QuiteApp'
+import Quite from './QuizLogic'
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <>
        <Quite></Quite>
-       <h1>hello</h1>
     </>
   )
 }
