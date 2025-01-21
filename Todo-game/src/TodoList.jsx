@@ -86,7 +86,7 @@ export default function TodoList(){
                         </li>
                     ))}
 
-            </ul>
+            </ul>  
             <button onClick={upperCaseAll}>upperCase All</button>
         </div>
     )
